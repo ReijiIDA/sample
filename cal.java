@@ -11,7 +11,9 @@ public class cal{
     float calProb(int MaxIter, int wintcount){
         float r = 0;
         for(int i = wintcount; i <= MaxIter; i++){
-            
+            float r += 
         }
     }
+
+    long fractorial(int 
 }
