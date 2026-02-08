@@ -1,0 +1,18 @@
+```python
+def compute_reward(observation, terminated, truncated):
+    cart_position, cart_velocity, pole_angle, pole_velocity = observation
+    reward = 0.0
+    
+    if terminated:
+        reward = -10.0
+    else:
+        # 角度の整形報酬
+        angle_reward = np.cos(pole_angle)  # 棒が垂直に近いほど1に近づく
+        reward += angle_reward
+        
+        # 位置の整形報酬
+        position_reward = np.clip(cart_position, -2.4, 2.4) / 2.4  # カートが画面中央に近いほど1に近づく
+        reward += position_reward
+    
+    return reward
+```
